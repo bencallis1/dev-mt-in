@@ -1,0 +1,34 @@
+<section class="home-container">
+    <div class="home-container-left">
+        <p ng-if="!profileInfo">Welcome to  <em>DevMountain</em> Social <br> Add some info so friends can find you</p>
+        <form ng-if="!profileInfo">
+            <input type="text" placeholder="Full Name" ng-model="userData.fullname">
+            <input type="text" placeholder="Tagline" ng-model="userData.tagline">
+            <input type="text" placeholder="Image Url" ng-model="userData.imageurl">
+            <input type="text" placeholder="bio" ng-model="userData.bio">
+            <button type="submit" ng-click="createProile()"> Add info</button>
+
+        </form>
+
+
+        <div ng-if="profileInfo">
+            <h1>{{userData.fullname}}</h1>
+            <p>{{userData.tagline}}</p>
+            <p>{{userData.bio}}</p>
+        </div>
+
+
+
+    </div>
+
+    <div class="right">
+
+        <ui-view></ui-view>
+
+    </div>
+
+
+
+
+
+</section>

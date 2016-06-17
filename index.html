@@ -1,14 +1,50 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="devFriends">
 
 <head>
 	<meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1"> 
 	<title>DevMtin</title>
+	<link rel="stylesheet" href="./styles/normalize.css">
+	<link rel="stylesheet" href="./styles/main.css">
 </head>
 
 <body>
 
+<main role="main" ng-controller="mainCtrl">
+	<header class="main-header">
+		<img class="search" src="./images/icons/Search.svg" alt="Search">
+		<h1>DevMountain</h1>
+		<img class="HAM" src="./images/icons/HAM.svg" alt="HAM">
+
+	</header>
+	<ui-view></ui-view>
+
+	<footer>
+		<ul>
+			<li ui-sref="viewfriends" ui-sref-active="active">View Friends</li>
+			<li ui-sref="findFriends">Find Friends</li>
+			<li ng-click="updateProfile()">Update Profile</li>
+
+
+		</ul>
+	</footer>
+</main>
+
+
+
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.3.1/angular-ui-router.js"></script>
+
+<!--Setting up the app-->
+
+<script src="./js/app.js"> </script>
+<script src="./js/mainCtrl.js"> </script>
+<script src="./js/usrSvc.js"></script>
   
 </body>
 </html>
